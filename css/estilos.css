@@ -1,0 +1,397 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff5f7;
+    color: #333;
+}
+
+
+/* =========================
+   BARRA DE NAVEGACIÓN
+========================= */
+
+.site-header {
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+
+/* NOMBRE DE LA FLORERÍA */
+
+.site-header .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #b23a5a;
+}
+
+
+/* MENÚ */
+
+.site-header .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.site-header .nav-links a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.site-header .nav-links a:hover {
+    color: #b23a5a;
+}
+
+
+/* =========================
+   BOTÓN CARRITO
+========================= */
+
+.cart-badge-btn {
+    background: #b23a5a;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.cart-badge-btn:hover {
+    background: #8f2d47;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   CUADRÍCULA DE PRODUCTOS
+========================= */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* IMAGEN */
+
+.product-img {
+    width: 100%;
+    height: 140px;
+    background: #f8dce3;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8f2d47;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+
+/* TÍTULO */
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+
+/* PRECIO */
+
+.product-price {
+    color: #b23a5a;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.65rem;
+}
+
+.presentation-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.presentation-select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e8b9c5;
+    border-radius: 6px;
+    background: #fff;
+    color: #444;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.presentation-select:focus {
+    border-color: #b23a5a;
+    box-shadow: 0 0 0 2px rgba(178, 58, 90, 0.10);
+}
+
+
+/* =========================
+   BOTÓN AGREGAR AL CARRITO
+========================= */
+
+.btn-add {
+    background: #f8dce3;
+    color: #8f2d47;
+    border: 1px solid #e8b9c5;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-add:hover {
+    background: #b23a5a;
+    color: white;
+    border-color: #b23a5a;
+}
+
+
+/* =========================
+   SECCIÓN DEL CARRITO
+========================= */
+
+.cart-section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 5rem;
+}
+
+
+/* TÍTULO DEL CARRITO */
+
+.cart-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f8dce3;
+    padding-bottom: 0.5rem;
+    color: #b23a5a;
+}
+
+
+/* PRODUCTOS DEL CARRITO */
+
+.cart-items {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f8dce3;
+    font-size: 0.95rem;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    padding-right: 8px;
+}
+
+.cart-item-details strong {
+    color: #444;
+    line-height: 1.25;
+}
+
+.cart-item-presentation {
+    color: #8f2d47;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.cart-item-price {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   BOTÓN ELIMINAR
+========================= */
+
+.btn-remove {
+    background: #fee2e2;
+    color: #b23a5a;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.btn-remove:hover {
+    background: #f8cbd4;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #8f2d47;
+}
+
+
+/* =========================
+   FINALIZAR COMPRA
+========================= */
+
+.btn-checkout {
+    width: 100%;
+    background: #b23a5a;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-checkout:hover {
+    background: #8f2d47;
+}
+
+
+/* =========================
+   CARRITO VACÍO
+========================= */
+
+.empty-cart {
+    color: #6b7280;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+
+/* =========================
+   PIE DE PÁGINA DEL CARRITO
+========================= */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > .container {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.cart-footer {
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 0;
+    background: #8f2d47;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.cart-footer p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+    .cart-footer {
+        padding: 20px 12px;
+    }
+
+    .cart-footer p {
+        font-size: 12px;
+    }
+}
